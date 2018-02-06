@@ -26,41 +26,45 @@ class Profile(models.Model):
     gender = models.IntegerField(choices=GENDER_CHOICES)
     year_level = models.IntegerField(choices=YEAR_LEVEL_CHOICES)
     citizenship = models.CharField(max_length=200)
-    religion = models.CharField(max_length=200)
-    residence_tel_no = models.CharField(max_length=11)
-    birthday = models.DateField()
+    religion = models.CharField(max_length=200, blank=True, null=True)
+    residence_tel_no = models.CharField(max_length=11, blank=True, null=True)
+    birthday = models.DateField(blank=True, null=True)
 
     # location of birth
-    birth_city = models.CharField(max_length=200)
-    birth_municipality = models.CharField(max_length=200)
-    birth_barangay = models.CharField(max_length=200)
-    birth_street = models.CharField(max_length=200)
+    birth_city = models.CharField(max_length=200, blank=True, null=True)
+    birth_municipality = models.CharField(
+        max_length=200, blank=True, null=True)
+    birth_barangay = models.CharField(max_length=200, blank=True, null=True)
+    birth_street = models.CharField(max_length=200, blank=True, null=True)
 
     # present address
-    address_city = models.CharField(max_length=200)
-    address_municipality = models.CharField(max_length=200)
-    address_barangay = models.CharField(max_length=200)
-    address_street = models.CharField(max_length=200)
+    address_city = models.CharField(max_length=200, blank=True, null=True)
+    address_municipality = models.CharField(
+        max_length=200, blank=True, null=True)
+    address_barangay = models.CharField(max_length=200, blank=True, null=True)
+    address_street = models.CharField(max_length=200, blank=True, null=True)
 
     # father's information
-    father_fname = models.CharField(max_length=200)
-    father_lname = models.CharField(max_length=200)
-    father_mname = models.CharField(max_length=200)
-    father_citizenship = models.CharField(max_length=200)
-    father_religion = models.CharField(max_length=200)
-    father_contact = models.CharField(max_length=11)
-    father_occupation = models.CharField(max_length=200)
-    father_birthday = models.DateField()
+    father_fname = models.CharField(max_length=200, blank=True, null=True)
+    father_lname = models.CharField(max_length=200, blank=True, null=True)
+    father_mname = models.CharField(max_length=200, blank=True, null=True)
+    father_citizenship = models.CharField(
+        max_length=200, blank=True, null=True)
+    father_religion = models.CharField(max_length=200, blank=True, null=True)
+    father_contact = models.CharField(max_length=11, blank=True, null=True)
+    father_occupation = models.CharField(max_length=200, blank=True, null=True)
+    father_birthday = models.DateField(blank=True, null=True)
 
     # mother's information
-    mother_fname = models.CharField(max_length=200)
-    father_lname = models.CharField(max_length=200)
-    father_mname = models.CharField(max_length=200)
-    father_citizenship = models.CharField(max_length=200)
-    father_religion = models.CharField(max_length=200)
-    father_contact = models.CharField(max_length=11)
-    father_occupation = models.CharField(max_length=200)
-    father_birthday = models.DateField()
+    mother_fname = models.CharField(max_length=200, blank=True, null=True)
+    father_lname = models.CharField(max_length=200, blank=True, null=True)
+    father_mname = models.CharField(max_length=200, blank=True, null=True)
+    father_citizenship = models.CharField(
+        max_length=200, blank=True, null=True)
+    father_religion = models.CharField(max_length=200, blank=True, null=True)
+    father_contact = models.CharField(max_length=11, blank=True, null=True)
+    father_occupation = models.CharField(max_length=200, blank=True, null=True)
+    father_birthday = models.DateField(blank=True, null=True)
 
     tuition = models.DecimalField(max_digits=2, decimal_places=2)
 # Create your models here.
