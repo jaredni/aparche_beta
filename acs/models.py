@@ -20,12 +20,12 @@ YEAR_LEVEL_CHOICES = (
 
 class Profile(models.Model):
     # learner's information
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    middle_name = models.CharField(max_length=200)
-    gender = models.IntegerField(choices=GENDER_CHOICES)
-    year_level = models.IntegerField(choices=YEAR_LEVEL_CHOICES)
-    citizenship = models.CharField(max_length=200)
+    first_name = models.CharField(max_length=200, null=True)
+    last_name = models.CharField(max_length=200, null=True)
+    middle_name = models.CharField(max_length=200, null=True)
+    gender = models.IntegerField(choices=GENDER_CHOICES, null=True)
+    year_level = models.IntegerField(choices=YEAR_LEVEL_CHOICES, null=True)
+    citizenship = models.CharField(max_length=200, blank=True, null=True)
     religion = models.CharField(max_length=200, blank=True, null=True)
     residence_tel_no = models.CharField(max_length=11, blank=True, null=True)
     birthday = models.DateField(blank=True, null=True)
@@ -66,5 +66,5 @@ class Profile(models.Model):
     father_occupation = models.CharField(max_length=200, blank=True, null=True)
     father_birthday = models.DateField(blank=True, null=True)
 
-    tuition = models.DecimalField(max_digits=2, decimal_places=2)
+    tuition = models.DecimalField(max_digits=2, decimal_places=2, null=True)
 # Create your models here.
