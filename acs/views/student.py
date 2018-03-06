@@ -19,3 +19,7 @@ class CreateView(generic.CreateView):
     model = Profile
     form_class = StudentForm
     success_url = reverse_lazy('create-student')
+
+class DetailView(generic.DetailView):
+    template_name = 'acs/student/detail.html'
+    model = Profile

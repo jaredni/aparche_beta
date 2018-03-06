@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^student/create/$', student.CreateView.as_view(),
         name='create-student'),
     url(r'^student/list/$', student.ListView.as_view(), name='list-student'),
+    url(r'^student/detail/(?P<pk>\d+)$', student.DetailView.as_view(),
+        name='detail-student'),
 ]
