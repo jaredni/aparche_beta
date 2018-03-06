@@ -57,14 +57,14 @@ class Profile(models.Model):
 
     # mother's information
     mother_fname = models.CharField(max_length=200, blank=True, null=True)
-    father_lname = models.CharField(max_length=200, blank=True, null=True)
-    father_mname = models.CharField(max_length=200, blank=True, null=True)
-    father_citizenship = models.CharField(
+    mother_lname = models.CharField(max_length=200, blank=True, null=True)
+    mother_mname = models.CharField(max_length=200, blank=True, null=True)
+    mother_citizenship = models.CharField(
         max_length=200, blank=True, null=True)
-    father_religion = models.CharField(max_length=200, blank=True, null=True)
-    father_contact = models.CharField(max_length=11, blank=True, null=True)
-    father_occupation = models.CharField(max_length=200, blank=True, null=True)
-    father_birthday = models.DateField(blank=True, null=True)
+    mother_religion = models.CharField(max_length=200, blank=True, null=True)
+    mother_contact = models.CharField(max_length=11, blank=True, null=True)
+    mother_occupation = models.CharField(max_length=200, blank=True, null=True)
+    mother_birthday = models.DateField(blank=True, null=True)
 
     tuition = models.DecimalField(max_digits=2, decimal_places=2, null=True)
 # Create your models here.
