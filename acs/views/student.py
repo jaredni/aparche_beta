@@ -9,6 +9,11 @@ class IndexView(generic.TemplateView):
     template_name = 'acs/index.html'
 
 
+class ListView(generic.ListView):
+    template_name = 'acs/student/list.html'
+    model = Profile
+
+
 class CreateView(generic.CreateView):
     template_name = 'acs/student/create.html'
     model = Profile
