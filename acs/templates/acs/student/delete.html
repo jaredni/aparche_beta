@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ object.first_name }}</title>
+</head>
+<body>
+Delete <b> {{ object.last_name }}, {{ object.first_name }} {{ object.middle_name }}</b>?
+<form action="" method="post">
+	{% csrf_token %}
+	<input type="submit" name="delete" value="Delete Student">
+</form>
+
+</body>
+</html>

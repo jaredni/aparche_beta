@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student List</title>
+</head>
+<body>
+<h1>Student List</h1>
+{% for object in object_list %}
+	<a href="{% url 'detail-student' object.pk %}">{{ object.first_name }} {{ object.middle_name }}{{ object.last_name }}</a><a href="{% url 'delete-student' object.pk %}">Delete Student</a>
+{% endfor %}
+<br>
+<a href="{% url 'create-student' %}">Create Student</a>
+</body>
+</html>
