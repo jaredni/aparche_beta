@@ -5,10 +5,6 @@ from django.core.urlresolvers import reverse_lazy
 from django.views import generic
 
 
-class IndexView(generic.TemplateView):
-    template_name = 'acs/index.html'
-
-
 class ListView(generic.ListView):
     template_name = 'acs/student/list.html'
     model = Profile
