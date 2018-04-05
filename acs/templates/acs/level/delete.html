@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete {{ object.year_level }}</title>
+</head>
+<body>
+Delete <b> {{ object.year_level }} </b>?
+<form action="" method="post">
+	{% csrf_token %}
+	<input type="submit" name="delete" value="Delete Level">
+</form>
+
+</body>
+</html>

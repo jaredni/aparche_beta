@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Level List</title>
+</head>
+<body>
+<h1>Level List</h1>
+{% for object in object_list %}
+	<a href="{% url 'detail-level' object.pk %}">{{ object.year_level }}</a><a href="{% url 'delete-level' object.pk %}">Delete Year Level</a>
+{% endfor %}
+<br>
+<a href="{% url 'create-level' %}">Create Year Level</a>
+</body>
+</html>

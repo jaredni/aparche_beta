@@ -7,4 +7,4 @@ class StudentForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        exclude = ('tuition',)
+        fields = "__all__"
