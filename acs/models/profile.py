@@ -1,20 +1,10 @@
 from django.db import models
 
+from acs.models.level import Level
+
 GENDER_CHOICES = (
     (0, 'Female'),
     (1, 'Male'),
-)
-
-YEAR_LEVEL_CHOICES = (
-    (0, 'Nursery'),             # 3 years old by june
-    (1, 'Pre-K'),               # 4 years old by june
-    (2, 'Kindergarten'),         # 5 years old by june
-    (3, 'Grade 1'),
-    (4, 'Grade 2'),
-    (5, 'Grade 3'),
-    (6, 'Grade 4'),
-    (7, 'Grade 5'),
-    (8, 'Grade 6'),
 )
 
 
@@ -24,7 +14,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=200, null=True)
     middle_name = models.CharField(max_length=200, null=True)
     gender = models.IntegerField(choices=GENDER_CHOICES, null=True)
-    year_level = models.IntegerField(choices=YEAR_LEVEL_CHOICES, null=True)
+    year_level = models.ForeignKey(Level, related_name='level', null=True)
     citizenship = models.CharField(max_length=200, blank=True, null=True)
     religion = models.CharField(max_length=200, blank=True, null=True)
     residence_tel_no = models.CharField(max_length=11, blank=True, null=True)
@@ -65,6 +55,4 @@ class Profile(models.Model):
     mother_contact = models.CharField(max_length=11, blank=True, null=True)
     mother_occupation = models.CharField(max_length=200, blank=True, null=True)
     mother_birthday = models.DateField(blank=True, null=True)
-
-    tuition = models.DecimalField(max_digits=2, decimal_places=2, null=True)
 # Create your models here.
