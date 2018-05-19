@@ -31,4 +31,7 @@ urlpatterns = [
     # ------------ Transactions
     url(r'^transaction/create/(?P<student_pk>\d+)$',
         transaction.CreateView.as_view(), name='create-transaction'),
+
+    url(r'^transaction/list/(?P<student_pk>\d+)$',
+        transaction.ListView.as_view(), name='list-transaction'),
 ]

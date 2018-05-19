@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% if STUDENT %}{{ STUDENT.first_name }}'s Transactions{% else %}All Transactions{% endif %}</title>
+</head>
+<body>
+	<h1>{% if STUDENT %}{{ STUDENT.first_name }}'s Transactions{% else %}All Transactions{% endif %}</h1>
+	<table style="border: 1;">
+		<tr>
+			<th>When</th>
+			<th>Amount</th>
+			{% if not STUDENT %}<th>Student</th>{% endif %}
+		</tr>
+		{% for object in object_list %}
+			<tr>
+				<td>{{ object.when }}</td>
+				<td style="text-align: center;">{{ object.amount }}</td>
+				{% if not STUDENT %}<td><a href="{% url 'detail-student' object.student.pk %}">{{ object.student.first_name }}</a></td>{% endif %}
+			</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

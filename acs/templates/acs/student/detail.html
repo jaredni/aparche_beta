@@ -6,5 +6,6 @@
 <body>
 <h1>{{ object }}</h1>
 <b>Amount paid</b>: {{ object.get_total_paid }} <a href="{% url 'create-transaction' object.pk %}">Pay</a>
+<a href="{% url 'list-transaction' object.pk %}">View Transaction History</a>
 </body>
 </html>
