@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Sum
 
 from acs.models.level import Level
 
@@ -56,3 +57,12 @@ class Profile(models.Model):
     mother_occupation = models.CharField(max_length=200, blank=True, null=True)
     mother_birthday = models.DateField(blank=True, null=True)
 # Create your models here.
+
+    def __str__(self):
+        return '{} {}, {}'.format(
+            self.last_name, self.first_name, self.middle_name)
+
+    @property
+    def get_total_paid(self):
+        total_paid = self.transaction.aggregate(Sum('amount'))
+        return total_paid['amount__sum']
