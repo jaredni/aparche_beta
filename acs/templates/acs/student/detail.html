@@ -5,7 +5,15 @@
 </head>
 <body>
 <h1>{{ object }}</h1>
-<b>Amount paid</b>: {{ object.get_total_paid }} <a href="{% url 'create-transaction' object.pk %}">Pay</a>
+<b>Tuition</b>: {{ object.year_level.tuition }}
+<br>
+<b>Amount paid</b>: {{ object.get_total_paid }} 
+<br>
+{% if object.remaining_balance %}
+	<b>Balance</b>: {{ object.remaining_balance }}
+	<br>
+	<a href="{% url 'create-transaction' object.pk %}">Pay</a>
+{% endif %}
 <a href="{% url 'list-transaction' object.pk %}">View Transaction History</a>
 </body>
 </html>

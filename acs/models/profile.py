@@ -66,3 +66,11 @@ class Profile(models.Model):
     def get_total_paid(self):
         total_paid = self.transaction.aggregate(Sum('amount'))
         return total_paid['amount__sum']
+
+    @property
+    def remaining_balance(self):
+        remaining_balance = self.year_level.tuition - self.get_total_paid
+
+        if remaining_balance == 0:
+            return False
+        return remaining_balance
