@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from .views import student, level
+from .views import student, level, transaction
 
 urlpatterns = [
     # ------------ Students
@@ -27,4 +27,8 @@ urlpatterns = [
 
     url(r'^level/delete/(?P<pk>\d+)$', level.DeleteView.as_view(),
         name='delete-level'),
+
+    # ------------ Transactions
+    url(r'^transaction/create/(?P<student_pk>\d+)$',
+        transaction.CreateView.as_view(), name='create-transaction'),
 ]

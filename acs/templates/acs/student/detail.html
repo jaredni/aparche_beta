@@ -4,7 +4,7 @@
 	<title>{{ object.first_name }}</title>
 </head>
 <body>
-<h1>{{ object.last_name }}, {{ object.first_name }} {{ object.middle_name }}</h1>
-<b>Amount paid</b>: {{ object.get_total_paid }}
+<h1>{{ object }}</h1>
+<b>Amount paid</b>: {{ object.get_total_paid }} <a href="{% url 'create-transaction' object.pk %}">Pay</a>
 </body>
 </html>
